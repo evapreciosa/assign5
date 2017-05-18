@@ -15,8 +15,6 @@ var skycons = new Skycons();
   var day2Skycon;
   var day3Skycon;
 
-
-
   // update a icon on  canvas by its id
  // skycons.set("today", Skycons.PARTLY_CLOUDY_NIGHT);
 
@@ -92,22 +90,22 @@ var skycons = new Skycons();
   getWeatherData("臺北市");
 
   function getIcon(weather){
-    if( weather.indexOf("Sunny") >= 0 ){
+    if( weather.indexOf("Sunny") >= 0 || weather.indexOf("Hot") >= 0 ){
       return Skycons.CLEAR_DAY;
-    }else if( weather == "Clear (night)" ){
-      return    Skycons.CLEAR_NIGHT;
-    }else if( weather.indexOf("Cloudy") >= 0 ){
-      return    Skycons.CLOUDY;
-    }else if(  weather.indexOf("Showers") >= 0  || weather.indexOf("Rain") >= 0 || weather.indexOf("Thunderstorms") >= 0 ){
-      return    Skycons.RAIN;
-    }else if( weather == "Sleet" ){1
-      return    Skycons.SLEET;
-    }else if( weather.indexOf("Snow") >= 0 ){
-      return    Skycons.SNOW;
-    }else if( weather == "Wind" || weather.indexOf("Breezy") >= 0 ){
-      return    Skycons.WIND;
-    }else if( weather == "Foggy" ){
-      return    Skycons.FOG;
+    }else if( weather.indexOf("Clear") >= 0 || weather.indexOf("Fair") >= 0 ){
+      return Skycons.CLEAR_NIGHT;
+    }else if( weather.indexOf("Cloudy") >= 0 || weather.indexOf("Dust") >= 0 || weather.indexOf("Haze") >= 0 || weather.indexOf("Smoky") >= 0 ){
+      return Skycons.CLOUDY;
+    }else if( weather.indexOf("Snow") >= 0 || weather.indexOf("Hail") >= 0 ){
+      return Skycons.SNOW;
+    }else if( weather.indexOf("Sleet") >= 0 || weather.indexOf("Showers") >= 0 || weather.indexOf("Thunderstorms") >= 0 ){
+      return Skycons.SLEET;
+    }else if( weather.indexOf("Rain") >= 0 || weather.indexOf("Drizzle") >= 0 ){
+      return Skycons.RAIN;
+    }else if( weather.indexOf("Wind") >= 0 || weather.indexOf("Breezy") >= 0 || weather.indexOf("Blustery") >= 0 || weather.indexOf("Cold") >= 0 || weather.indexOf("Tornado") >= 0 || weather.indexOf("Tropical Storm") >= 0 || weather.indexOf("Hurricane") >= 0 ){
+      return Skycons.WIND;
+    }else if( weather.indexOf("Foggy") >= 0 ){
+      return Skycons.FOG;
     }
 
   }   
@@ -128,5 +126,3 @@ function getTemps(){
   }) 
 }
 getTemps();
-
-
